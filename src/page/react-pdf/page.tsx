@@ -1,6 +1,6 @@
 import React from "react";
-import { PreviewPdf } from "../../components/react-pdf";
+import { PreviewReactPdf } from "../../components/react-pdf";
 
 export default function Page() {
-  return <PreviewPdf />;
+  return <PreviewReactPdf />;
 }

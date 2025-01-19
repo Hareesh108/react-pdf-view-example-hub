@@ -1,3 +1,5 @@
+import { NavLink } from "react-router";
+
 export default function Home() {
   return (
     <div
@@ -32,6 +34,7 @@ export default function Home() {
               "Display PDFs in your React app as easily as if they were images. React-PDF supports all modern browsers.",
             image: "/src/assets/react-pdf.png",
             link: "https://www.npmjs.com/package/react-pdf",
+            path: "/react-pdf",
           },
           {
             name: "React PDF Viewer",
@@ -39,6 +42,7 @@ export default function Home() {
               "A React component to view a PDF document. It's written in TypeScript, and powered by React hooks completely.",
             image: "/src/assets/react-pdf-viewer.png",
             link: "https://www.npmjs.com/package/@react-pdf-viewer/core",
+            path: "/react-pdf-viewer",
           },
         ].map((doc, index) => (
           <div
@@ -65,13 +69,17 @@ export default function Home() {
                   gap: 3,
                 }}
               >
-                <h3>Check out demo example here</h3>
-                <img
-                  src="/src/assets/svg/circle-svgrepo-com.svg"
-                  width="50"
-                  alt={`${doc.name} icon`}
-                  style={{ cursor: "pointer" }}
-                />
+                <h3 style={{ paddingTop: "10px" }}>
+                  Check out demo example here
+                </h3>
+                <NavLink to={doc.path}>
+                  <img
+                    src="/src/assets/svg/circle-svgrepo-com.svg"
+                    width="50"
+                    alt={`${doc.name} icon`}
+                    style={{ cursor: "pointer" }}
+                  />
+                </NavLink>
               </div>
             </div>
           </div>
