@@ -35,24 +35,41 @@ export const PreviewPdf = () => {
     <>
       <div className="page">
         <nav>
-          <button onClick={goToPrevPage} className="previous">
+          <button
+            onClick={goToPrevPage}
+            className="previous"
+            disabled={pageNumber <= 1}
+          >
             Prev
           </button>
-          <button onClick={goToNextPage} className="next">
+          <button
+            onClick={goToNextPage}
+            className="next"
+            disabled={pageNumber >= (numPages || 0)}
+          >
             Next
           </button>
+
           <p>
             Page {pageNumber} of {numPages}
           </p>
         </nav>
-        <Document
-          file="src/sample/sample.pdf"
-          onLoadSuccess={onDocumentLoadSuccess}
-          loading="Loading PDF..."
-          error="Failed to load PDF file."
+
+        <div
+          style={{
+            border: "1px solid #cecece",
+            boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+          }}
         >
-          <Page pageNumber={pageNumber} />
-        </Document>
+          <Document
+            file="src/sample/sample.pdf"
+            onLoadSuccess={onDocumentLoadSuccess}
+            loading="Loading PDF..."
+            error="Failed to load PDF file."
+          >
+            <Page pageNumber={pageNumber} />
+          </Document>
+        </div>
       </div>
     </>
   );
