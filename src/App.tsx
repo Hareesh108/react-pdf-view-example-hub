@@ -1,5 +1,4 @@
 import "./App.css";
-import { PreviewPdf } from "./components/react-pdf";
 
 function App() {
   return (
@@ -8,7 +7,6 @@ function App() {
         padding: "20px",
         paddingRight: "100px",
         paddingLeft: "100px",
-        backgroundColor: "#f5f5f5",
       }}
     >
       <h1
@@ -24,24 +22,60 @@ function App() {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(2, 1fr)",
+          gridTemplateColumns: "repeat(3, 1fr)",
           gap: "2rem",
           padding: "1rem",
         }}
       >
-        {[1, 2, 3, 4].map((index) => (
+        {[
+          {
+            name: "React-PDF",
+            description:
+              "Display PDFs in your React app as easily as if they were images. React-PDF supports all modern browsers.",
+            image: "/src/assets/react-pdf.png",
+            link: "https://www.npmjs.com/package/react-pdf",
+          },
+          {
+            name: "React PDF Viewer",
+            description:
+              "A React component to view a PDF document. It's written in TypeScript, and powered by React hooks completely.",
+            image: "/src/assets/react-pdf-viewer.png",
+            link: "https://www.npmjs.com/package/@react-pdf-viewer/core",
+          },
+        ].map((doc, index) => (
           <div
             key={index}
             style={{
-              backgroundColor: "white",
+              backgroundColor: "#f5f5f5",
               borderRadius: "8px",
-              padding: "1rem",
+              padding: "1.3rem",
               boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
               maxHeight: "350px",
               overflow: "hidden",
             }}
           >
-            <PreviewPdf />
+            <div>
+              <h2>{doc.name}</h2>
+              <p>{doc.description}</p>
+              <a href={doc.link} target="_blank">
+                <img src={doc.image} width="100%" alt={doc.name} />
+              </a>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "right",
+                  gap: 3,
+                }}
+              >
+                <h3>Check out demo example here</h3>
+                <img
+                  src="/src/assets/svg/circle-svgrepo-com.svg"
+                  width="50"
+                  alt={`${doc.name} icon`}
+                  style={{ cursor: "pointer" }}
+                />
+              </div>
+            </div>
           </div>
         ))}
       </div>
