@@ -1,5 +1,5 @@
 import { Document, Page } from "react-pdf";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { pdfjs } from "react-pdf";
 
 import "./style.css";
@@ -20,6 +20,8 @@ export const PreviewPdf = () => {
 
   const [scale, setScale] = useState(1.2);
 
+  const [isFullscreen, setIsFullscreen] = useState(false);
+
   const onDocumentLoadSuccess = ({
     numPages: loadedNumPages,
   }: {
@@ -35,6 +37,25 @@ export const PreviewPdf = () => {
 
   const zoomIn = () => setScale((prev) => Math.min(prev + 0.1, 2.0));
   const zoomOut = () => setScale((prev) => Math.max(prev - 0.1, 0.5));
+
+  const toggleFullscreen = () => {
+    if (!isFullscreen) {
+      document.documentElement.requestFullscreen();
+    } else {
+      document.exitFullscreen();
+    }
+    setIsFullscreen(!isFullscreen);
+  };
+
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
+
+    document.addEventListener("fullscreenchange", handleFullscreenChange);
+    return () =>
+      document.removeEventListener("fullscreenchange", handleFullscreenChange);
+  }, []);
 
   return (
     <>
@@ -95,6 +116,28 @@ export const PreviewPdf = () => {
                 d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
                 fill="currentColor"
               />
+            </svg>
+
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              onClick={toggleFullscreen}
+              style={{ cursor: "pointer", margin: "0 8px" }}
+            >
+              {isFullscreen ? (
+                <path
+                  d="M5 16h3v3h2v-5H5v2zm3-8H5v2h5V5H8v3zm6 11h2v-3h3v-2h-5v5zm2-11V5h-2v5h5V8h-3z"
+                  fill="currentColor"
+                />
+              ) : (
+                <path
+                  d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"
+                  fill="currentColor"
+                />
+              )}
             </svg>
           </div>
         </nav>
