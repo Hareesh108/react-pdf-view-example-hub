@@ -54,8 +54,12 @@ export const PreviewReactPdf = () => {
     };
 
     document.addEventListener("fullscreenchange", handleFullscreenChange);
-    return () =>
+    return () => {
       document.removeEventListener("fullscreenchange", handleFullscreenChange);
+      if (document.fullscreenElement) {
+        document.exitFullscreen();
+      }
+    };
   }, []);
 
   const handleDownload = async () => {
