@@ -57,6 +57,23 @@ export const PreviewPdf = () => {
       document.removeEventListener("fullscreenchange", handleFullscreenChange);
   }, []);
 
+  const handleDownload = async () => {
+    try {
+      const response = await fetch("src/sample/sample.pdf");
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.setAttribute("download", "sample.pdf");
+      document.body.appendChild(link);
+      link.click();
+      link.parentNode?.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error("Error downloading PDF:", error);
+    }
+  };
+
   return (
     <>
       <div className="page">
@@ -138,6 +155,20 @@ export const PreviewPdf = () => {
                   fill="currentColor"
                 />
               )}
+            </svg>
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              onClick={handleDownload}
+              style={{ cursor: "pointer", margin: "0 8px" }}
+            >
+              <path
+                d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"
+                fill="currentColor"
+              />
             </svg>
           </div>
         </nav>
