@@ -36,14 +36,6 @@ export default function Home() {
             link: "https://www.npmjs.com/package/react-pdf",
             path: "/react-pdf",
           },
-          {
-            name: "React PDF Viewer",
-            description:
-              "A React component to view a PDF document. It's written in TypeScript, and powered by React hooks completely.",
-            image: "/src/assets/react-pdf-viewer.png",
-            link: "https://www.npmjs.com/package/@react-pdf-viewer/core",
-            path: "/react-pdf-viewer",
-          },
         ].map((doc, index) => (
           <div
             key={index}
