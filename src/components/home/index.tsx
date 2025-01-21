@@ -36,6 +36,12 @@ export default function Home() {
             link: "https://www.npmjs.com/package/react-pdf",
             path: "/react-pdf",
           },
+          {
+            name: "Using Embed",
+            description:
+              "Using embed rendering a PDF using the <embed> tag in HTML, it allows you to display the PDF directly within the browser for users to view without needing a separate application.",
+            path: "/embed",
+          },
         ].map((doc, index) => (
           <div
             key={index}
@@ -51,9 +57,11 @@ export default function Home() {
             <div>
               <h2>{doc.name}</h2>
               <p>{doc.description}</p>
-              <a href={doc.link} target="_blank">
-                <img src={doc.image} width="100%" alt={doc.name} />
-              </a>
+              {doc.image && (
+                <a href={doc.link} target="_blank">
+                  <img src={doc.image} width="100%" alt={doc.name} />
+                </a>
+              )}
               <div
                 style={{
                   display: "flex",
