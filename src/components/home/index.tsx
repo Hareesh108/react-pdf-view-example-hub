@@ -42,6 +42,12 @@ export default function Home() {
               "Using embed rendering a PDF using the <embed> tag in HTML, it allows you to display the PDF directly within the browser for users to view without needing a separate application.",
             path: "/embed",
           },
+          {
+            name: "Using IFrame",
+            description:
+              "Using iframe rendering a PDF using the <iframe> tag in HTML, it allows you to display the PDF directly within the browser for users to view without needing a separate application.",
+            path: "/iframe",
+          },
         ].map((doc, index) => (
           <div
             key={index}
