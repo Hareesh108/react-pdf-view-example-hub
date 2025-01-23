@@ -11,9 +11,11 @@ export default function PdfJs() {
     "https://unpkg.com/pdfjs-dist@4.10.38/build/pdf.worker.min.mjs";
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const [pdfDoc, setPdfDoc] = useState<PDFDocumentProxy>();
   const [currentPage, setCurrentPage] = useState(1);
+  const [scale, setScale] = useState(1.5);
   let renderTask: PDFJS.RenderTask;
 
   const renderPage = useCallback(
@@ -22,11 +24,11 @@ export default function PdfJs() {
       if (!canvas || !pdf) return;
       canvas.height = 0;
       canvas.width = 0;
-      // canvas.hidden = true;
+
       pdf
         .getPage(pageNum)
         .then((page) => {
-          const viewport = page.getViewport({ scale: 1.5 });
+          const viewport = page.getViewport({ scale });
           canvas.height = viewport.height;
           canvas.width = viewport.width;
           const renderContext: RenderParameters = {
@@ -45,12 +47,12 @@ export default function PdfJs() {
         })
         .catch((error) => console.log(error));
     },
-    [pdfDoc]
+    [pdfDoc, scale]
   );
 
   useEffect(() => {
     renderPage(currentPage, pdfDoc);
-  }, [pdfDoc, currentPage, renderPage]);
+  }, [pdfDoc, currentPage, renderPage, scale]);
 
   useEffect(() => {
     const loadingTask = PDFJS.getDocument("src/sample/sample.pdf");
@@ -69,8 +71,20 @@ export default function PdfJs() {
 
   const prevPage = () => currentPage > 1 && setCurrentPage(currentPage - 1);
 
+  const zoomIn = () => setScale((prev) => prev + 0.25);
+  const zoomOut = () => setScale((prev) => (prev > 0.5 ? prev - 0.25 : prev));
+
+  const toggleFullScreen = () => {
+    if (!document.fullscreenElement) {
+      containerRef.current?.requestFullscreen();
+    } else {
+      document.exitFullscreen();
+    }
+  };
+
   return (
     <div
+      ref={containerRef}
       style={{
         display: "flex",
         flexDirection: "column",
@@ -79,15 +93,30 @@ export default function PdfJs() {
         height: "100vh",
       }}
     >
-      <div>
+      <div
+        style={{
+          display: "flex",
+          gap: "10px",
+          alignItems: "center",
+          marginBottom: "10px",
+        }}
+      >
         <button onClick={prevPage} disabled={currentPage <= 1}>
           Previous
         </button>
+        <span>
+          Page {currentPage} of {pdfDoc?.numPages || 0}
+        </span>
         <button
           onClick={nextPage}
           disabled={currentPage >= (pdfDoc?.numPages ?? -1)}
         >
           Next
+        </button>
+        <button onClick={zoomIn}>Zoom In</button>
+        <button onClick={zoomOut}>Zoom Out</button>
+        <button onClick={toggleFullScreen}>
+          {document.fullscreenElement ? "Exit Full Screen" : "Full Screen"}
         </button>
       </div>
 
