@@ -37,6 +37,14 @@ export default function Home() {
             path: "/react-pdf",
           },
           {
+            name: "PdfJS Dist",
+            description:
+              "Display PDFs in your React app as easily as if they were images. React-PDF supports all modern browsers.",
+            image: "/src/assets/react-pdf.png",
+            link: "https://www.npmjs.com/package/react-pdf",
+            path: "/pdfjs-dist",
+          },
+          {
             name: "Using Embed",
             description:
               "Using embed rendering a PDF using the <embed> tag in HTML, it allows you to display the PDF directly within the browser for users to view without needing a separate application.",
