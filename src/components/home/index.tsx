@@ -48,6 +48,12 @@ export default function Home() {
               "Using iframe rendering a PDF using the <iframe> tag in HTML, it allows you to display the PDF directly within the browser for users to view without needing a separate application.",
             path: "/iframe",
           },
+          {
+            name: "Using Object",
+            description:
+              "you can display a PDF directly in the browser using an <object> tag. The <object> tag allows you to embed multimedia content",
+            path: "/object",
+          },
         ].map((doc, index) => (
           <div
             key={index}
