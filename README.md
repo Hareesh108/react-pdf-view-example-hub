@@ -1,6 +1,6 @@
-# PDF Viewing Methods in React
+# 📄 React PDF Viewer Example Hub
 
-A comprehensive guide to implementing PDF viewing in React applications using five different approaches.
+A collection of PDF handling implementations in React, showcasing various features like document previews, custom toolbars, text selection, and PDF generation.
 
 ## Features
 
