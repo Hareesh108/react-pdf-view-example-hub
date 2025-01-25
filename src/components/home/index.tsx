@@ -40,7 +40,7 @@ export default function Home() {
                 cross-browser compatibility
               </>
             ),
-            image: "/src/assets/dummy/dummy-01.png",
+            image: "/public/assets/dummy/dummy-01.png",
             link: "https://www.npmjs.com/package/react-pdf",
             path: "/react-pdf",
           },
@@ -53,7 +53,7 @@ export default function Home() {
                 implementations
               </>
             ),
-            image: "/src/assets/dummy/dummy-02.png",
+            image: "/public/assets/dummy/dummy-02.png",
             link: "https://www.npmjs.com/package/pdfjs-dist",
             path: "/pdfjs-dist",
           },
@@ -66,7 +66,7 @@ export default function Home() {
                 controls
               </>
             ),
-            image: "/src/assets/dummy/dummy-03.png",
+            image: "/public/assets/dummy/dummy-03.png",
             path: "/embed",
           },
           {
@@ -78,7 +78,7 @@ export default function Home() {
                 from hosting domain
               </>
             ),
-            image: "/src/assets/dummy/dummy-04.png",
+            image: "/public/assets/dummy/dummy-04.png",
             path: "/iframe",
           },
           {
@@ -90,7 +90,7 @@ export default function Home() {
                 browsers
               </>
             ),
-            image: "/src/assets/dummy/dummy-05.png",
+            image: "/public/assets/dummy/dummy-05.png",
             path: "/object",
           },
         ].map((doc, index) => (
@@ -129,7 +129,7 @@ export default function Home() {
                 </h3>
                 <NavLink to={doc.path}>
                   <img
-                    src="/src/assets/svg/circle-svgrepo-com.svg"
+                    src="/public/assets/svg/circle-svgrepo-com.svg"
                     width="50"
                     alt={`${doc.name} icon`}
                     style={{ cursor: "pointer" }}

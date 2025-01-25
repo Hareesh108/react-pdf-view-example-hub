@@ -1,50 +1,210 @@
-# React + TypeScript + Vite
+# PDF Viewing Methods in React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A comprehensive guide to implementing PDF viewing in React applications using five different approaches.
 
-Currently, two official plugins are available:
+![Demo](./src/assets/demo.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Table of Contents
 
-## Expanding the ESLint configuration
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [1. React-PDF](#1-react-pdf)
+  - [2. PdfJS Dist](#2-pdfjs-dist)
+  - [3. Using Embed](#3-using-embed)
+  - [4. Using IFrame](#4-using-iframe)
+  - [5. Using Object](#5-using-object)
+- [Method Comparison](#method-comparison)
+- [Contributing](#contributing)
+- [License](#license)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Features
 
-- Configure the top-level `parserOptions` property like this:
+- Five distinct methods for PDF rendering
+- Cross-browser compatibility# PDF Viewing Methods in React
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+A comprehensive guide to implementing PDF viewing in React applications using five different approaches.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+![Demo](./src/assets/demo.png)
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Table of Contents
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [1. React-PDF](#1-react-pdf)
+  - [2. PdfJS Dist](#2-pdfjs-dist)
+  - [3. Using Embed](#3-using-embed)
+  - [4. Using IFrame](#4-using-iframe)
+  - [5. Using Object](#5-using-object)
+- [Method Comparison](#method-comparison)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Features
+
+- Five distinct methods for PDF rendering
+- Cross-browser compatibility
+- Responsive PDF viewing
+- Code examples for each approach
+- Performance considerations
+
+## Installation
+
+```bash
+# Install React-PDF and PDF.js
+npm install react-pdf pdfjs-dist# PDF Viewing Methods in React
+
+A comprehensive guide to implementing PDF viewing in React applications using five different approaches.
+
+![Demo](./src/assets/demo.png)
+
+## Table of Contents
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [1. React-PDF](#1-react-pdf)
+  - [2. PdfJS Dist](#2-pdfjs-dist)
+  - [3. Using Embed](#3-using-embed)
+  - [4. Using IFrame](#4-using-iframe)
+  - [5. Using Object](#5-using-object)
+- [Method Comparison](#method-comparison)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Features
+- Five distinct methods for PDF rendering
+- Cross-browser compatibility
+- Responsive PDF viewing
+- Code examples for each approach
+- Performance considerations
+
+## Installation
+```bash
+# Install React-PDF and PDF.js
+npm install react-pdf pdfjs-dist# PDF Viewing Methods in React
+
+A comprehensive guide to implementing PDF viewing in React applications using five different approaches.
+
+![Demo](./src/assets/demo.png)
+
+## Table of Contents
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [1. React-PDF](#1-react-pdf)
+  - [2. PdfJS Dist](#2-pdfjs-dist)
+  - [3. Using Embed](#3-using-embed)
+  - [4. Using IFrame](#4-using-iframe)
+  - [5. Using Object](#5-using-object)
+- [Method Comparison](#method-comparison)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Features
+- Five distinct methods for PDF rendering
+- Cross-browser compatibility
+- Responsive PDF viewing
+- Code examples for each approach
+- Performance considerations
+
+## Installation
+```bash
+# Install React-PDF and PDF.js
+npm install react-pdf pdfjs-dist# PDF Viewing Methods in React
+
+A comprehensive guide to implementing PDF viewing in React applications using five different approaches.
+
+![Demo](./src/assets/demo.png)
+
+## Table of Contents
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [1. React-PDF](#1-react-pdf)
+  - [2. PdfJS Dist](#2-pdfjs-dist)
+  - [3. Using Embed](#3-using-embed)
+  - [4. Using IFrame](#4-using-iframe)
+  - [5. Using Object](#5-using-object)
+- [Method Comparison](#method-comparison)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Features
+- Five distinct methods for PDF rendering
+- Cross-browser compatibility
+- Responsive PDF viewing
+- Code examples for each approach
+- Performance considerations
+
+## Installation
+```bash
+# Install React-PDF and PDF.js
+npm install react-pdf pdfjs-dist# PDF Viewing Methods in React
+
+A comprehensive guide to implementing PDF viewing in React applications using five different approaches.
+
+![Demo](./src/assets/demo.png)
+
+## Table of Contents
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [1. React-PDF](#1-react-pdf)
+  - [2. PdfJS Dist](#2-pdfjs-dist)
+  - [3. Using Embed](#3-using-embed)
+  - [4. Using IFrame](#4-using-iframe)
+  - [5. Using Object](#5-using-object)
+- [Method Comparison](#method-comparison)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Features
+- Five distinct methods for PDF rendering
+- Cross-browser compatibility
+- Responsive PDF viewing
+- Code examples for each approach
+- Performance considerations
+
+## Installation
+```bash
+# Install React-PDF and PDF.js
+npm install react-pdf pdfjs-dist# PDF Viewing Methods in React
+
+A comprehensive guide to implementing PDF viewing in React applications using five different approaches.
+
+![Demo](./src/assets/demo.png)
+
+## Table of Contents
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [1. React-PDF](#1-react-pdf)
+  - [2. PdfJS Dist](#2-pdfjs-dist)
+  - [3. Using Embed](#3-using-embed)
+  - [4. Using IFrame](#4-using-iframe)
+  - [5. Using Object](#5-using-object)
+- [Method Comparison](#method-comparison)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Features
+- Five distinct methods for PDF rendering
+- Cross-browser compatibility
+- Responsive PDF viewing
+- Code examples for each approach
+- Performance considerations
+
+## Installation
+```bash
+# Install React-PDF and PDF.js
+npm install react-pdf pdfjs-dist
+- Responsive PDF viewing
+- Code examples for each approach
+- Performance considerations
+
+## Installation
+
+```bash
+# Install React-PDF and PDF.js
+npm install react-pdf pdfjs-dist
