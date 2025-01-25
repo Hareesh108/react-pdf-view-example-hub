@@ -33,38 +33,63 @@ export default function Home() {
         {[
           {
             name: "React-PDF",
-            description:
-              "Display PDFs in your React app as easily as if they were images. React-PDF supports all modern browsers.",
+            description: (
+              <>
+                • Display PDFs in your React app as easily as if they were
+                images <br /> • Supports annotations, text selection, and
+                cross-browser compatibility
+              </>
+            ),
             image: "/src/assets/dummy/dummy-01.png",
             link: "https://www.npmjs.com/package/react-pdf",
             path: "/react-pdf",
           },
           {
             name: "PdfJS Dist",
-            description:
-              "Display PDFs in your React app as easily as if they were images. React-PDF supports all modern browsers.",
+            description: (
+              <>
+                • Core PDF.js library for advanced PDF rendering capabilities{" "}
+                <br />• Enables text layer extraction and custom rendering
+                implementations
+              </>
+            ),
             image: "/src/assets/dummy/dummy-02.png",
             link: "https://www.npmjs.com/package/pdfjs-dist",
             path: "/pdfjs-dist",
           },
           {
             name: "Using Embed",
-            description:
-              "Using embed rendering a PDF using the <embed> tag in HTML, it allows you to display the PDF directly within the browser for users to view without needing a separate application.",
+            description: (
+              <>
+                • Simple implementation using native HTML <strong>embed</strong>{" "}
+                tag <br />• Provides basic PDF viewing with browser-default
+                controls
+              </>
+            ),
             image: "/src/assets/dummy/dummy-03.png",
             path: "/embed",
           },
           {
             name: "Using IFrame",
-            description:
-              "Using iframe rendering a PDF using the <iframe> tag in HTML, it allows you to display the PDF directly within the browser for users to view without needing a separate application.",
+            description: (
+              <>
+                • Embed PDFs using HTML <strong>iframe</strong> for isolated
+                content rendering <br />• Allows full PDF viewer functionality
+                from hosting domain
+              </>
+            ),
             image: "/src/assets/dummy/dummy-04.png",
             path: "/iframe",
           },
           {
             name: "Using Object",
-            description:
-              "you can display a PDF directly in the browser using an <object> tag. The <object> tag allows you to embed multimedia content",
+            description: (
+              <>
+                • Flexible HTML <strong>object</strong> tag implementation for
+                PDF embedding <br />• Supports fallback content for incompatible
+                browsers
+              </>
+            ),
             image: "/src/assets/dummy/dummy-05.png",
             path: "/object",
           },
